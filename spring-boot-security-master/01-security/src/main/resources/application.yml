@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: 01-security
+  security:
+    user:
+      name: admin
+      password: admin
+server:
+  port: 8001

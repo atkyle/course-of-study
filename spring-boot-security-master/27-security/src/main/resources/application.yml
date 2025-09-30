@@ -1,0 +1,5 @@
+spring:
+  application:
+    name: 27-security
+server:
+  port: 8027

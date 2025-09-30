@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="security112.mapper.SysUserMapper">
+    
+    <resultMap id="selectByUserNameMap" type="security112.model.SysUser">
+        <id property="id" column="id"/>
+        <result property="username" column="username"/>
+        <result property="password" column="password"/>
+        <collection property="sysRoleList" ofType="security112.model.SysRole">
+            <id property="id" column="roleId"/>
+            <result property="role" column="roleName"/>
+        </collection>
+        <collection property="sysMenuList" ofType="security112.model.SysMenu">
+            <id property="id" column="menuId"/>
+            <result property="parentId" column="menuParentId"/>
+            <result property="name" column="menuName"/>
+            <result property="url" column="menuUrl"/>
+            <result property="authority" column="menuAuthority"/>
+        </collection>
+    </resultMap>
+
+    <!-- 查询用户的同时，查询出用户拥有的所有角色 -->
+    <select id="selectByUserName" parameterType="java.lang.String" resultMap="selectByUserNameMap">
+        select
+        a.id,a.username,a.password,
+        c.id as "roleId",c.role as "roleName",
+        e.id as "menuId",e.parent_id as "menuParentId",e.name as "menuName",e.url as "menuUrl",e.authority as "menuAuthority"
+        from sys_user a
+        left outer join sys_user_role b on b.user_id=a.id
+        left outer join sys_role c on c.id = b.role_id
+        left outer join sys_role_menu d on d.role_id=c.id
+        left outer join sys_menu e on e.id=d.menu_id
+        where a.username = #{username}
+    </select>
+
+</mapper>
+
+

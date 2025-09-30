@@ -1,0 +1,10 @@
+spring:
+  application:
+    name: 07-security
+  datasource:
+    url: jdbc:sqlite:07-security/src/main/resources/db/07.db
+    password:
+    username:
+    driver-class-name: org.sqlite.JDBC
+server:
+  port: 8007

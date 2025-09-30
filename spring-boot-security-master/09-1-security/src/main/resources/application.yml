@@ -1,0 +1,19 @@
+spring:
+  application:
+    name: 09-security
+  datasource:
+    url: jdbc:sqlite:09-1-security/src/main/resources/db/091.db
+    password:
+    username:
+    driver-class-name: org.sqlite.JDBC
+  redis:
+    host: localhost
+    port: 6379
+    database: 1
+  session:
+    store-type: redis
+    timeout: 1800000 #半小时过期
+server:
+  port: 8019
+mybatis:
+  mapper-locations: classpath:mappers/**/*.xml

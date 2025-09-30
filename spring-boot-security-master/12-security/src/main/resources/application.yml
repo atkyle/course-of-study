@@ -1,0 +1,10 @@
+spring:
+  application:
+    name: 12-security
+  security:
+    user:
+      name: admin
+      password: admin
+      roles: ONE
+server:
+  port: 8012

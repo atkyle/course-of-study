@@ -1,0 +1,5 @@
+spring:
+  application:
+    name: 17-security
+server:
+  port: 8017

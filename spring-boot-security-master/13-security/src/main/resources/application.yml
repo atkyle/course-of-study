@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: 13-security
+  datasource:
+    url: jdbc:sqlite:13-security/src/main/resources/db/13.db
+    password:
+    username:
+    driver-class-name: org.sqlite.JDBC
+server:
+  port: 8013
+mybatis:
+  mapper-locations: classpath:mappers/**/*.xml

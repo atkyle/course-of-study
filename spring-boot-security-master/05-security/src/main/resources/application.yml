@@ -1,0 +1,5 @@
+spring:
+  application:
+    name: 05-security
+server:
+  port: 8005

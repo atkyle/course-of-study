@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: 23-security
+  datasource:
+    url: jdbc:sqlite:23-security/src/main/resources/db/23.db
+    password:
+    username:
+    driver-class-name: org.sqlite.JDBC
+  redis:
+    host: localhost
+    port: 6379
+    database: 4
+server:
+  port: 8023
+mybatis:
+  mapper-locations: classpath:mappers/**/*.xml

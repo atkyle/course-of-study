@@ -1,0 +1,5 @@
+spring:
+  application:
+    name: 20-security
+server:
+  port: 8020

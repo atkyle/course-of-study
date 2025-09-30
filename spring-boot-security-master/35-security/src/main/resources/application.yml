@@ -1,0 +1,22 @@
+spring:
+  application:
+    name: 35-security
+server:
+  port: 8035
+  servlet:
+    session:
+      cookie:
+        name: SSO-SESSIONID-SSO
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://127.0.0.1:8030/eureka/
+security:
+  oauth2:
+    client:
+      clientId: clientId
+      clientSecret: secret
+      userAuthorizationUri: http://127.0.0.1:8034/oauth/authorize
+      accessTokenUri: http://127.0.0.1:8034/oauth/token
+    resource:
+      token-info-uri: http://127.0.0.1:8034/oauth/check_token

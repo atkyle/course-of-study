@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: 34-security
+server:
+  port: 8034
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://127.0.0.1:8030/eureka/

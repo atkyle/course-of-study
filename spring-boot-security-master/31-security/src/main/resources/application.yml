@@ -1,0 +1,21 @@
+spring:
+  application:
+    name: 31-security
+  datasource:
+    url: jdbc:sqlite:31-security/src/main/resources/db/31.db
+    password:
+    username:
+    driver-class-name: org.sqlite.JDBC
+  redis:
+    host: localhost
+    port: 6379
+    database: 4
+server:
+  port: 8031
+mybatis:
+  mapper-locations: classpath:mappers/**/*.xml
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://127.0.0.1:8030/eureka/
+

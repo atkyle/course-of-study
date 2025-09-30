@@ -1,0 +1,10 @@
+spring:
+  application:
+    name: 19-security
+  datasource:
+    url: jdbc:sqlite:19-security/src/main/resources/db/19.db
+    password:
+    username:
+    driver-class-name: org.sqlite.JDBC
+server:
+  port: 8019

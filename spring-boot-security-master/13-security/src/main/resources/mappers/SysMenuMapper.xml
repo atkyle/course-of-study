@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="security13.mapper.SysMenuMapper">
+    
+
+
+    <!-- 查询url对应的所有角色 -->
+    <select id="selectRoleNamesByUrl" parameterType="java.lang.String" resultType="java.lang.String">
+        select a.role from sys_role a,sys_role_menu b,sys_menu c where a.id=b.sys_role_id and c.id=b.sys_menu_id and c.url=#{url}
+    </select>
+
+</mapper>
+
+

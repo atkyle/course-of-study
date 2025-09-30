@@ -1,0 +1,5 @@
+spring:
+  application:
+    name: 24-security
+server:
+  port: 8024

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="security26.mapper.ClientsMapper">
+
+    <select id="selectById" parameterType="java.lang.String" resultType="security26.model.Clients">
+        select
+        client_id as "clientId",
+        client_secret as "clientSecret",
+        resource_ids as "resourceIds",
+        scope,
+        authorized_grant_types as "authorizedGrantTypes",
+        web_server_redirect_uri as "registeredRedirectUris",
+        authorities as "authorities",
+        access_token_validity as "accessTokenValiditySeconds",
+        refresh_token_validity as "refreshTokenValiditySeconds",
+        additional_information as "additionalInformation",
+        autoapprove as "autoApproveScopes"
+        from oauth_client_details
+        where client_id=#{clientId}
+    </select>
+
+</mapper>
+
+

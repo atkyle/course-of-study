@@ -1,0 +1,5 @@
+spring:
+  application:
+    name: 22-security
+server:
+  port: 8022
